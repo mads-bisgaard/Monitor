@@ -4,7 +4,7 @@ Python script to monitor websites
 ## Setting up a workspace
 To monitor a bunch of sites one needs to create a workspace, a folder henceforth denoted `workspace`. All cached data is stored in `workspace`. Within `workspace` one needs to create a folder named "inputFolder" containing two plain text files:
 1. A file named "urlFile" containing a list of urls to monitor: A single url on ech line. 
-E.g. the content of `keyFile` might look something like
+E.g. the content of `urlFile` might look something like
 ```
 https://github.com
 https://www.worldometers.info    
