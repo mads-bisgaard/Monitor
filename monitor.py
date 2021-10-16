@@ -86,7 +86,7 @@ def printLogs(countLog, linkLog):
         msg += '==========================' + newLine
         msg += newLine.join(countLog) + newLine
     else:
-        msg += newLine + 'No new keywords detected'
+        msg += newLine + 'No new keywords detected' + newLine
     if len(linkLog) > 0:
         msg += 'Link detection results:' + newLine
         msg += '==========================' + newLine
@@ -203,8 +203,9 @@ def cacheData(projectFolder):
         linkContent = []
         for link in links:
             href = link.get('href')
-            if href.startswith('https://') or href.startswith('http://'):
-                linkContent.append(href)
+            if href is not None:
+                if href.startswith('https://') or href.startswith('http://'):
+                    linkContent.append(href)
         
         with open(os.path.join(cache['siteCaches'], cleanUrl(url)), 'w+') as f:
             f.write('\n'.join(linkContent))
